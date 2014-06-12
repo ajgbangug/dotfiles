@@ -68,18 +68,18 @@ cnoremap ;; <Esc>
 " automatically change directories when opening buffers
 set autochdir
 
+" always show the status line
+set laststatus=2
+
 " this is for vundle
 set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
-Bundle 'scrooloose/nerdtree'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-git'
-Bundle 'Lokaltog/powerline'
 Bundle 'klen/python-mode'
 Bundle 'msanders/snipmate.vim'
-Bundle 'davidhalter/jedi-vim'
 Bundle 'flazz/vim-colorschemes'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'tpope/vim-vividchalk'
@@ -87,26 +87,27 @@ Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 Bundle 'tpope/vim-surround'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'chase/vim-ansible-yaml'
+Bundle 'airblade/vim-gitgutter'
+Bundle 'kien/ctrlp.vim'
+Bundle 'rking/ag.vim'
+Bundle 'zenorocha/dracula-theme'
+Bundle 'bling/vim-airline'
+Bundle 'elzr/vim-json'
+Bundle 'davidhalter/jedi-vim'
 
 " vanity settings
 if has('gui_running')
-    set guifont=Monaco\ for\ Powerline:h12
-    colorscheme Tomorrow-Night
+    set guifont=Ubuntu\ Mono\ derivative\ Powerline:h15
+    set background=dark
     set transparency=5
+    colorscheme Tomorrow-Night 
+    let g:airline_powerline_fonts = 1
 endif
 
-" close vim if NERDTree is the only open buffer
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+" make ctrlp fuzzyfind in the current directory
+let g:ctrl_p_working_path_mode = 'ca'
 
-" change working directory when changing root in NERDTree
-let g:NERDTreeChDirMode=2
-nnoremap <leader>t :NERDTreeToggle<CR>
-
-" disable rope
-let g:pymode_rope_completion = 0
-
-" add powerline to rtp
-set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+let g:pymode_rope = 0
 
 " syntax highlighting options
 filetype on
