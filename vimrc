@@ -20,9 +20,9 @@ set smartcase
 set backspace=indent,eol,start
 set autoindent
 set number
-set shiftwidth=4
-set tabstop=4
-set softtabstop=4
+set shiftwidth=2
+set tabstop=2
+set softtabstop=2
 set expandtab
 set shiftround
 
@@ -32,7 +32,7 @@ set splitright
 
 " limit to 80 lines (as per pep8)
 set tw=79
-set colorcolumn=80
+call matchadd('ColorColumn', '\%81v', 100)
 
 set foldmethod=indent
 set foldlevel=99
@@ -52,7 +52,6 @@ vnoremap > >gv
 
 " saving with good 'ol CTRL + S
 noremap <c-s> :w<cr>
-cnoremap <c-s> :w<cr>
 
 " backup settings
 set nobackup
@@ -94,15 +93,24 @@ Bundle 'zenorocha/dracula-theme'
 Bundle 'bling/vim-airline'
 Bundle 'elzr/vim-json'
 Bundle 'davidhalter/jedi-vim'
+Bundle 'scrooloose/nerdtree'
+Bundle 'pangloss/vim-javascript'
+Bundle 'jelera/vim-javascript-syntax'
+Bundle 'marijnh/tern_for_vim'
 
 " vanity settings
 if has('gui_running')
-    set guifont=Ubuntu\ Mono\ derivative\ Powerline:h15
+    set guifont=Sauce\ Code\ Powerline:h13
     set background=dark
-    set transparency=5
-    colorscheme Tomorrow-Night 
+    set transparency=1
+    colorscheme Tomorrow-Night
     let g:airline_powerline_fonts = 1
 endif
+
+" NERDTree settings
+map <leader>t :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+let g:NERDTreeIgnore = ['\.pyc$', '\.log$']
 
 " make ctrlp fuzzyfind in the current directory
 let g:ctrl_p_working_path_mode = 'ca'
@@ -111,5 +119,6 @@ let g:pymode_rope = 0
 
 " syntax highlighting options
 filetype on
+filetype indent off
 filetype indent plugin on
 syntax on
