@@ -97,15 +97,19 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'pangloss/vim-javascript'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'marijnh/tern_for_vim'
+Bundle 'altercation/vim-colors-solarized'
 
-" vanity settings
+" gui settings
 if has('gui_running')
-    set guifont=Sauce\ Code\ Powerline:h13
+    set guifont=Monaco\ for\ Powerline:h12
     set background=dark
     set transparency=1
-    colorscheme Tomorrow-Night
+    colorscheme wombat256
     let g:airline_powerline_fonts = 1
 endif
+
+" colorscheme settings
+colorscheme wombat256
 
 " NERDTree settings
 map <leader>t :NERDTreeToggle<CR>
