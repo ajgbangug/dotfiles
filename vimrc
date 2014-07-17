@@ -71,45 +71,48 @@ set autochdir
 set laststatus=2
 
 " this is for vundle
+filetype off
 set rtp+=~/.vim/bundle/vundle
-call vundle#rc()
+call vundle#begin()
 
-Bundle 'gmarik/vundle'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-git'
-Bundle 'klen/python-mode'
-Bundle 'msanders/snipmate.vim'
-Bundle 'flazz/vim-colorschemes'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'tpope/vim-vividchalk'
-Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
-Bundle 'tpope/vim-surround'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'chase/vim-ansible-yaml'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'kien/ctrlp.vim'
-Bundle 'rking/ag.vim'
-Bundle 'zenorocha/dracula-theme'
-Bundle 'bling/vim-airline'
-Bundle 'elzr/vim-json'
-Bundle 'davidhalter/jedi-vim'
-Bundle 'scrooloose/nerdtree'
-Bundle 'pangloss/vim-javascript'
-Bundle 'jelera/vim-javascript-syntax'
-Bundle 'marijnh/tern_for_vim'
-Bundle 'altercation/vim-colors-solarized'
+Plugin 'gmarik/Vundle.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-git'
+Plugin 'klen/python-mode'
+Plugin 'msanders/snipmate.vim'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'tpope/vim-vividchalk'
+Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
+Plugin 'tpope/vim-surround'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'chase/vim-ansible-yaml'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'kien/ctrlp.vim'
+Plugin 'rking/ag.vim'
+Plugin 'zenorocha/dracula-theme'
+Plugin 'bling/vim-airline'
+Plugin 'elzr/vim-json'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'pangloss/vim-javascript'
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'marijnh/tern_for_vim'
+Plugin 'altercation/vim-colors-solarized'
+
+call vundle#end()
 
 " gui settings
 if has('gui_running')
     set guifont=Monaco\ for\ Powerline:h12
     set background=dark
     set transparency=1
-    colorscheme wombat256
+    colorscheme codeschool
     let g:airline_powerline_fonts = 1
 endif
 
 " colorscheme settings
-colorscheme wombat256
+colorscheme codeschool
 
 " NERDTree settings
 map <leader>t :NERDTreeToggle<CR>
