@@ -5,6 +5,20 @@ let mapleader = ","
 set nocompatible
 filetype off
 
+function! GetRunningOS()
+  if has("win32")
+    return "win"
+  endif
+  if has("unix")
+    if system('uname')=~ 'Darwin'
+      return "mac"
+    else
+      return "linux"
+    endif
+  endif
+endfunction
+let os=GetRunningOS()
+
 " this is for vundle
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -40,11 +54,15 @@ call vundle#end()
 
 " gui settings
 if has('gui_running')
+  if has('gui_macvim')
     set guifont=Sauce\ Code\ Powerline:h14
-    set background=dark
-    set transparency=1
-    colorscheme base16-eighties
-    let g:airline_powerline_fonts = 1
+  elseif has('gui_gtk2')
+    set guifont=Sauce\ Code\ Powerline:h14
+  endif
+  set background=dark
+  set transparency=1
+  colorscheme base16-eighties
+  let g:airline_powerline_fonts = 1
 endif
 
 colorscheme base16-eighties
