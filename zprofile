@@ -1,12 +1,26 @@
 stty -ixon
+
+export TERM=xterm-256color
 export LC_ALL=en_US.utf-8
 export LANG="$LC_ALL"
 
+platform='unknown'
+
+if [[ $OSTYPE == 'linus-gnu' ]]; then
+  platform='linux'
+elif [[ $OSTYPE == 'darwin'* ]]; then
+  platform='mac'
+fi
+
 # for homebrew
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+if [[ $platform == 'mac' ]]; then
+  export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+fi
 
 # for Java
-export JAVA_HOME=$(/usr/libexec/java_home)
+if [[ $platform == 'mac' ]]; then
+  export JAVA_HOME=$(/usr/libexec/java_home)
+fi
 
 # for virtualenv
 # source /usr/local/bin/virtualenvwrapper.sh

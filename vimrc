@@ -56,17 +56,14 @@ call vundle#end()
 if has('gui_running')
   if has('gui_macvim')
     set guifont=Sauce\ Code\ Powerline:h14
+    set transparency=1
   elseif has('gui_gtk2')
-    set guifont=Sauce\ Code\ Powerline:h14
+    set guifont=Source\ Code\ Pro\ for\ Powerline\ Medium\ 12
   endif
   set background=dark
-  set transparency=1
   colorscheme base16-eighties
   let g:airline_powerline_fonts = 1
 endif
-
-colorscheme base16-eighties
-set background=dark
 
 let g:netrw_preview = 1
 
