@@ -1,3 +1,4 @@
+# this is so that i can use ctrl
 stty -ixon
 
 export TERM=xterm-256color
@@ -11,6 +12,12 @@ if [[ $OSTYPE == 'linus-gnu' ]]; then
 elif [[ $OSTYPE == 'darwin'* ]]; then
   platform='mac'
 fi
+
+# for pyenv
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+
+# for pyenv-virtualenv
+if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 
 # for homebrew
 if [[ $platform == 'mac' ]]; then
@@ -31,10 +38,7 @@ if [[ $platform == 'mac' ]]; then
   export AWS_CLOUDFORMATION_HOME="/usr/local/Cellar/aws-cfn-tools/1.0.12/libexec"
 fi
 
+# for go stuff
+export PATH=$PATH:/usr/local/opt/go/libexec/bin
+
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
-# for pyenv
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
-
-# for pyenv-virtualenv
-if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
