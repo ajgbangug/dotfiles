@@ -26,9 +26,20 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'marijnh/tern_for_vim'
 Plugin 'chriskempson/base16-vim'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'flazz/vim-colorschemes'
 
 call vundle#end()
 filetype indent plugin on
+
+autocmd Colorscheme * highlight clear SignColumn
+autocmd ColorScheme * highlight GitGutterAdd guifg=green ctermfg=green
+autocmd ColorScheme * highlight GitGutterChange guifg=yellow ctermfg=yellow
+autocmd ColorScheme * highlight GitGutterDelete guifg=red ctermfg=red
+autocmd ColorScheme * highlight GitGutterChangeDelete guifg=yellow ctermfg=yellow
+
+set background=light
+colorscheme solarized
 
 " syntax highlighting and indentation options
 syntax on
@@ -50,16 +61,12 @@ let os=GetRunningOS()
 " gui settings
 if has('gui_running')
   if has('gui_macvim')
-    set guifont=Sauce\ Code\ Powerline:h13
-    set transparency=1
+    set guifont=Monaco\ for\ Powerline:h12
   elseif has('gui_gtk2')
     set guifont=Source\ Code\ Pro\ for\ Powerline\ Medium\ 12
   endif
   let g:airline_powerline_fonts = 1
 endif
-
-set background=dark
-colorscheme base16-default
 
 " set leader key
 let mapleader = ","
@@ -86,7 +93,7 @@ set smartcase
 " editing options
 set backspace=indent,eol,start
 set autoindent
-set relativenumber
+set number
 set shiftwidth=2
 set tabstop=2
 set softtabstop=2
