@@ -33,13 +33,13 @@ call vundle#end()
 filetype indent plugin on
 
 autocmd Colorscheme * highlight clear SignColumn
-autocmd ColorScheme * highlight GitGutterAdd guifg=green ctermfg=green
-autocmd ColorScheme * highlight GitGutterChange guifg=yellow ctermfg=yellow
-autocmd ColorScheme * highlight GitGutterDelete guifg=red ctermfg=red
-autocmd ColorScheme * highlight GitGutterChangeDelete guifg=yellow ctermfg=yellow
+autocmd Colorscheme * highlight clear GitGutterAdd
+autocmd Colorscheme * highlight clear GitGutterChange
+autocmd Colorscheme * highlight clear GitGutterDelete
+autocmd Colorscheme * highlight clear GitGutterChangeDelete
 
-set background=light
-colorscheme solarized
+set background=dark
+colorscheme wombat256
 
 " syntax highlighting and indentation options
 syntax on
