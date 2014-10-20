@@ -1,23 +1,26 @@
 # this is so that i can use ctrl
 stty -ixon
 
+if [ -x /usr/libexec/path_helper ]; then
+  PATH=''
+  source /etc/profile
+fi
+
 export TERM=xterm-256color
 export LC_ALL=en_US.utf-8
 export LANG="$LC_ALL"
 
+# identify if what i'm running in
 platform='unknown'
-
 if [[ $OSTYPE == 'linus-gnu' ]]; then
   platform='linux'
 elif [[ $OSTYPE == 'darwin'* ]]; then
   platform='mac'
 fi
 
-# for pyenv
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
-
-# for pyenv-virtualenv
-if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
+##############################
+# PATH stuff
+##############################
 
 # for homebrew
 if [[ $platform == 'mac' ]]; then
@@ -27,10 +30,8 @@ fi
 # for Java
 if [[ $platform == 'mac' ]]; then
   export JAVA_HOME=$(/usr/libexec/java_home)
+  export ANDROID_HOME=/usr/local/opt/android-sdk
 fi
-
-# Load RVM into a shell session *as a function*
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # for autoscaling
 if [[ $platform == 'mac' ]]; then
@@ -39,6 +40,17 @@ if [[ $platform == 'mac' ]]; then
 fi
 
 # for go stuff
+export GOROOT=/usr/local/Cellar/go/1.3.2/libexec
+export GOPATH=$HOME/go
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
 
+# for pyenv
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+
+# for pyenv-virtualenv
+if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
+
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+# Load RVM into a shell session *as a function*
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
