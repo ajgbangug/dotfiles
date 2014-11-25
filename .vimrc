@@ -6,33 +6,37 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+Plugin 'Raimondi/delimitMate'
+Plugin 'SirVer/ultisnips'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'bling/vim-airline'
+Plugin 'chase/vim-ansible-yaml'
+Plugin 'chriskempson/base16-vim'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'elzr/vim-json'
+Plugin 'ervandew/supertab'
+Plugin 'fatih/vim-go'
 Plugin 'gmarik/Vundle.vim'
+Plugin 'honza/vim-snippets'
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'kien/ctrlp.vim'
+Plugin 'majutsushi/tagbar'
+Plugin 'marijnh/tern_for_vim'
+Plugin 'mhinz/vim-signify'
+Plugin 'pangloss/vim-javascript'
+Plugin 'rking/ag.vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'tomtom/tcomment_vim'
+Plugin 'tpope/vim-bundler'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-git'
+Plugin 'tpope/vim-projectionist'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-rake'
 Plugin 'tpope/vim-surround'
-Plugin 'scrooloose/syntastic'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'chase/vim-ansible-yaml'
-Plugin 'kien/ctrlp.vim'
-Plugin 'rking/ag.vim'
-Plugin 'bling/vim-airline'
-Plugin 'elzr/vim-json'
-Plugin 'davidhalter/jedi-vim'
 Plugin 'tpope/vim-vinegar'
-Plugin 'pangloss/vim-javascript'
-Plugin 'jelera/vim-javascript-syntax'
-Plugin 'marijnh/tern_for_vim'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'mhinz/vim-signify'
-Plugin 'Raimondi/delimitMate'
-Plugin 'tomtom/tcomment_vim'
-Plugin 'ervandew/supertab'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
-Plugin 'majutsushi/tagbar'
-Plugin 'fatih/vim-go'
+Plugin 'vim-ruby/vim-ruby'
 Plugin 'whatyouhide/vim-gotham'
-Plugin 'chriskempson/base16-vim'
 
 call vundle#end()
 filetype indent plugin on
@@ -54,22 +58,22 @@ let os=GetRunningOS()
 " gui settings
 if has('gui_running')
   if has('gui_macvim')
-    set guifont=Menlo:h11
+    set guifont=Menlo\ Regular:h12
   elseif has('gui_gtk2')
     set guifont=Source\ Code\ Pro\ for\ Powerline\ Medium\ 12
   endif
 endif
 
 " syntax highlighting and indentation options
-let g:solarized_italic=0
 syntax on
 set background=dark
 colorscheme solarized
 
+let g:airline_theme = 'dark'
 let g:airline_powerline_fonts = 0
-let g:airline_theme = "dark"
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
+let g:airline#extensions#tabline#enabled = 1
 
 let g:netrw_preview = 1
 let g:netrw_hide = 1
@@ -111,6 +115,7 @@ set smartcase
 " editing options
 set backspace=indent,eol,start
 set autoindent
+set cursorline
 set number
 set relativenumber
 set shiftwidth=2
@@ -159,3 +164,11 @@ cnoremap ;; <Esc>
 
 " always show the status line
 set laststatus=2
+
+" always show line numbers, but only in the current window
+au WinEnter * setlocal number
+au WinEnter * setlocal relativenumber
+au WinEnter * setlocal cursorline
+au WinLeave * setlocal nonumber
+au WinLeave * setlocal norelativenumber
+au WinLeave * setlocal nocursorline
