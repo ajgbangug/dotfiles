@@ -62,6 +62,10 @@ if has('gui_running')
   elseif has('gui_gtk2')
     set guifont=Source\ Code\ Pro\ for\ Powerline\ Medium\ 12
   endif
+  set guioptions-=r
+  set guioptions-=R
+  set guioptions-=l
+  set guioptions-=L
 endif
 
 " syntax highlighting and indentation options
