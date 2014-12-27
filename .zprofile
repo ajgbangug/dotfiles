@@ -36,7 +36,7 @@ if [[ $platform == "mac" ]]; then
   export GOROOT="/usr/local/Cellar/go/$GO_VERSION/libexec"
   export GOPATH="$HOME/go"
   export PATH="$PATH:/usr/local/opt/go/libexec/bin"
-  # ec2 api 
+  # ec2 api
   EC2_API_VERSION="1.7.1.0"
   export EC2_HOME="/usr/local/Cellar/ec2-api-tools/$EC2_API_VERSION/libexec"
   # cloudformation api
@@ -45,6 +45,8 @@ if [[ $platform == "mac" ]]; then
   # autoscaling api
   AS_API_VERSION="1.0.61.6"
   export AWS_AUTO_SCALING_HOME="/usr/local/Cellar/auto-scaling/$AS_API_VERSION/libexec"
+  # for mactex
+  eval `/usr/libexec/path_helper -s`
 fi
 
 # for pyenv
