@@ -37,6 +37,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-vinegar'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'whatyouhide/vim-gotham'
+Plugin 'reedes/vim-colors-pencil'
 
 call vundle#end()
 filetype indent plugin on
@@ -58,7 +59,7 @@ let os=GetRunningOS()
 " gui settings
 if has('gui_running')
   if has('gui_macvim')
-    set guifont=Source\ Code\ Pro:h12
+    set guifont=Anonymous\ Pro:h14
   elseif has('gui_gtk2')
     set guifont=Source\ Code\ Pro\ for\ Powerline\ Medium\ 12
   endif
@@ -71,7 +72,7 @@ endif
 " syntax highlighting and indentation options
 syntax on
 set background=dark
-colorscheme base16-tomorrow
+colorscheme solarized
 
 let g:airline_theme = 'dark'
 let g:airline_powerline_fonts = 0
