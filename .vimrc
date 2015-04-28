@@ -72,7 +72,7 @@ endif
 " syntax highlighting and indentation options
 syntax on
 set background=dark
-colorscheme base16-default
+colorscheme solarized
 
 let g:airline_theme = 'dark'
 let g:airline_powerline_fonts = 0
