@@ -72,12 +72,13 @@ endif
 " syntax highlighting and indentation options
 syntax on
 set background=dark
-colorscheme base16-tomorrow
+colorscheme solarized
 
 let g:airline_powerline_fonts = 0
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme='dark'
 
 let g:netrw_preview = 1
 let g:netrw_hide = 1
