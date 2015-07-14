@@ -47,6 +47,9 @@ if [[ $platform == "mac" ]]; then
   export AWS_AUTO_SCALING_HOME="/usr/local/Cellar/auto-scaling/$AS_API_VERSION/libexec"
   # for mactex
   eval `/usr/libexec/path_helper -s`
+
+  # for boot2docker
+  export DOCKER_HOST=tcp://$(boot2docker ip 2>/dev/null):2375
 fi
 
 # for pyenv
