@@ -6,18 +6,19 @@ export LC_ALL=en_US.utf-8
 export LANG="$LC_ALL"
 
 # identify if what i'm running in
-platform="unknown"
-if [[ $OSTYPE == "linus-gnu" ]]; then
-  platform="linux"
+export platform="unknown"
+if [[ $OSTYPE == "linux-gnu" ]]; then
+  export platform="linux"
 elif [[ $OSTYPE == "darwin"* ]]; then
-  platform="mac"
+  export platform="mac"
 fi
 
 ##############################
 # PATH stuff
 ##############################
-# OSX specific configs
 if [[ $platform == "mac" ]]; then
+  # OSX specific configs
+
   # fix for path_helper messing up PATH when in tmux
   if [ -x /usr/libexec/path_helper ]; then
     PATH=""
@@ -50,6 +51,14 @@ if [[ $platform == "mac" ]]; then
 
   # for boot2docker
   export DOCKER_HOST=tcp://$(boot2docker ip 2>/dev/null):2375
+elif [[ $platform == "linux" ]]; then
+  # Linux specific configs
+
+  # For pyenv
+  export PYENV_PATH="$HOME/.pyenv/bin"
+  if [ -d $PYENV_PATH ]; then
+    export PATH="$HOME/.pyenv/bin:$PATH"
+  fi
 fi
 
 # for pyenv
@@ -61,4 +70,4 @@ if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 # Load RVM into a shell session *as a function*
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
