@@ -61,7 +61,7 @@ if has('gui_running')
   if has('gui_macvim')
     set guifont=InputMonoNarrow:h12
   elseif has('gui_gtk2')
-    set guifont=Envy\ Code\ R\ 12
+    set guifont=Input\ Mono\ Narrow\ Medium\ Semi-Condensed\ 12
   endif
   set guioptions-=r
   set guioptions-=R
