@@ -61,7 +61,7 @@ if has('gui_running')
   if has('gui_macvim')
     set guifont=Roboto\ Mono:h12
   elseif has('gui_gtk2')
-    set guifont=DejaVu\ Sans\ Mono\ 10
+    set guifont=Roboto\ Mono\ Medium\ 10
   endif
   set guioptions-=r
   set guioptions-=R
