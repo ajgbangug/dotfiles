@@ -26,6 +26,7 @@ Plugin 'mhinz/vim-signify'
 Plugin 'pangloss/vim-javascript'
 Plugin 'rking/ag.vim'
 Plugin 'scrooloose/syntastic'
+Plugin 'tomasr/molokai'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'tpope/vim-bundler'
 Plugin 'tpope/vim-fugitive'
@@ -38,7 +39,6 @@ Plugin 'tpope/vim-vinegar'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'whatyouhide/vim-gotham'
 Plugin 'reedes/vim-colors-pencil'
-Plugin 'tomasr/molokai'
 
 call vundle#end()
 filetype indent plugin on
@@ -60,7 +60,7 @@ let os=GetRunningOS()
 " gui settings
 if has('gui_running')
   if has('gui_macvim')
-    set guifont=Envy\ Code\ R:h13
+    set guifont=Roboto\ Mono:h12
   elseif has('gui_gtk2')
     set guifont=Roboto\ Mono\ Medium\ 9
   endif
@@ -79,6 +79,7 @@ let g:airline_powerline_fonts = 0
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme = 'dark'
 
 let g:netrw_preview = 1
 let g:netrw_hide = 1
