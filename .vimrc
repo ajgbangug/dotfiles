@@ -60,9 +60,9 @@ let os=GetRunningOS()
 " gui settings
 if has('gui_running')
   if has('gui_macvim')
-    set guifont=Roboto\ Mono:h12
+    set guifont=Office\ Code\ Pro:h12
   elseif has('gui_gtk2')
-    set guifont=Roboto\ Mono\ 9
+    set guifont=Office\ Code\ Pro\ 9
   endif
   set guioptions-=r
   set guioptions-=R
