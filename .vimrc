@@ -60,9 +60,9 @@ let os=GetRunningOS()
 " gui settings
 if has('gui_running')
   if has('gui_macvim')
-    set guifont=Roboto\ Mono:h13
+    set guifont=Office\ Code\ Pro:h13
   elseif has('gui_gtk2')
-    set guifont=Roboto\ Mono\ Medium\ 10
+    set guifont=Office\ Code\ Pro\ Medium\ 10
   endif
   set guioptions-=r
   set guioptions-=R
@@ -94,7 +94,7 @@ let g:UltiSnipsJumpBackwardTrigger = '<c-z>'
 
 let g:ctrlp_custom_ignore = 'target\|git\|.*\.pyc\|.*\.class'
 
-let g:syntastic_python_checkers = ['python', 'flake8', 'pylint']
+let g:syntastic_python_checkers = ['python', 'pylint']
 
 " turn off blinking cursor
 set gcr=a:blinkon0
