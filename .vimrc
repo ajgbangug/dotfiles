@@ -60,9 +60,9 @@ let os=GetRunningOS()
 " gui settings
 if has('gui_running')
   if has('gui_macvim')
-    set guifont=Roboto\ Mono:h13
+    set guifont=Office\ Code\ Pro:h13
   elseif has('gui_gtk2')
-    set guifont=Roboto\ Mono\ Medium\ 10
+    set guifont=Office\ Code\ Pro\ Medium\ 11
   endif
   set guioptions-=r
   set guioptions-=R
@@ -74,6 +74,8 @@ endif
 syntax on
 set background=dark
 colorscheme base16-tomorrow
+
+set colorcolumn=80
 
 let g:airline_powerline_fonts = 0
 let g:airline_left_sep = ''
