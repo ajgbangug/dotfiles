@@ -60,9 +60,9 @@ let os=GetRunningOS()
 " gui settings
 if has('gui_running')
   if has('gui_macvim')
-    set guifont=Office\ Code\ Pro:h13
+    set guifont=Meslo\ LG\ S\ DZ:h12
   elseif has('gui_gtk2')
-    set guifont=Office\ Code\ Pro\ Medium\ 11
+    set guifont=Meslo\ LG\ S\ DZ\ Medium\ 9
   endif
   set guioptions-=r
   set guioptions-=R
@@ -73,7 +73,7 @@ endif
 " syntax highlighting and indentation options
 syntax on
 set background=dark
-colorscheme base16-tomorrow
+colorscheme solarized
 
 set colorcolumn=80
 
