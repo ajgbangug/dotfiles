@@ -73,7 +73,7 @@ endif
 " syntax highlighting and indentation options
 syntax on
 set background=dark
-colorscheme base16-default
+colorscheme solarized
 
 set colorcolumn=80
 
