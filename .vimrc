@@ -2,45 +2,44 @@
 set nocompatible
 filetype off
 
-" this is for vundle
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
-Plugin 'Raimondi/delimitMate'
-Plugin 'SirVer/ultisnips'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'bling/vim-airline'
-Plugin 'chase/vim-ansible-yaml'
-Plugin 'chriskempson/base16-vim'
-Plugin 'davidhalter/jedi-vim'
-Plugin 'elzr/vim-json'
-Plugin 'ervandew/supertab'
-Plugin 'fatih/vim-go'
-Plugin 'gmarik/Vundle.vim'
-Plugin 'honza/vim-snippets'
-Plugin 'jelera/vim-javascript-syntax'
-Plugin 'kien/ctrlp.vim'
-Plugin 'majutsushi/tagbar'
-Plugin 'marijnh/tern_for_vim'
-Plugin 'mhinz/vim-signify'
-Plugin 'pangloss/vim-javascript'
-Plugin 'rking/ag.vim'
-Plugin 'scrooloose/syntastic'
-Plugin 'tomasr/molokai'
-Plugin 'tomtom/tcomment_vim'
-Plugin 'tpope/vim-bundler'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-git'
-Plugin 'tpope/vim-projectionist'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-rake'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-vinegar'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'whatyouhide/vim-gotham'
-Plugin 'reedes/vim-colors-pencil'
+Plug 'Raimondi/delimitMate'
+Plug 'SirVer/ultisnips'
+Plug 'altercation/vim-colors-solarized'
+Plug 'bling/vim-airline'
+Plug 'chase/vim-ansible-yaml'
+Plug 'chriskempson/base16-vim'
+Plug 'davidhalter/jedi-vim'
+Plug 'elzr/vim-json'
+Plug 'ervandew/supertab'
+Plug 'fatih/vim-go'
+Plug 'gmarik/Vundle.vim'
+Plug 'honza/vim-snippets'
+Plug 'jelera/vim-javascript-syntax'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'majutsushi/tagbar'
+Plug 'marijnh/tern_for_vim'
+Plug 'mhinz/vim-signify'
+Plug 'pangloss/vim-javascript'
+Plug 'rking/ag.vim'
+Plug 'scrooloose/syntastic'
+Plug 'tomasr/molokai'
+Plug 'tomtom/tcomment_vim'
+Plug 'tpope/vim-bundler'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-git'
+Plug 'tpope/vim-projectionist'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-rake'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-vinegar'
+Plug 'vim-ruby/vim-ruby'
+Plug 'whatyouhide/vim-gotham'
+Plug 'reedes/vim-colors-pencil'
 
-call vundle#end()
+call plug#end()
+
 filetype indent plugin on
 
 function! GetRunningOS()
@@ -95,7 +94,7 @@ let g:UltiSnipsJumpBackwardTrigger = '<c-z>'
 
 let g:ctrlp_custom_ignore = 'target\|git\|.*\.pyc\|.*\.class'
 
-let g:syntastic_python_checkers = ['python', 'pylint']
+let g:syntastic_python_checkers = ['python', 'flake8']
 
 " turn off blinking cursor
 set gcr=a:blinkon0
