@@ -74,6 +74,9 @@ if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 # for pyenv-virtualenv
 if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 
+# for jenv
+if which jenv > /dev/null; then eval "$(jenv init -)"; fi
+
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 # Load RVM into a shell session *as a function*
