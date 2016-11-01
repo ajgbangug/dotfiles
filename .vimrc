@@ -15,7 +15,6 @@ Plug 'dracula/vim'
 Plug 'elzr/vim-json'
 Plug 'ervandew/supertab'
 Plug 'fatih/vim-go'
-Plug 'gmarik/Vundle.vim'
 Plug 'honza/vim-snippets'
 Plug 'jelera/vim-javascript-syntax'
 Plug 'ctrlpvim/ctrlp.vim'
@@ -61,7 +60,7 @@ let os=GetRunningOS()
 " gui settings
 if has('gui_running')
   if has('gui_macvim')
-    set guifont=InputMono:h11
+    set guifont=InputMonoNarrow:h11
   elseif has('gui_gtk2')
     set guifont=DejaVu\ Sans\ Mono\ 9
   endif
