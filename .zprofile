@@ -30,7 +30,7 @@ if [[ $platform == "mac" ]]; then
 
   # for Java
   export JAVA_HOME=$(/usr/libexec/java_home)
-  export ANDROID_HOME="/usr/local/opt/android-sdk"
+  export ANDROID_HOME=~/Library/Android/sdk
 
   # for mactex
   eval `/usr/libexec/path_helper -s`
