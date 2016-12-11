@@ -9,7 +9,6 @@ Plug 'SirVer/ultisnips'
 Plug 'altercation/vim-colors-solarized'
 Plug 'bling/vim-airline'
 Plug 'chase/vim-ansible-yaml'
-Plug 'chriskempson/base16-vim'
 Plug 'davidhalter/jedi-vim'
 Plug 'dracula/vim'
 Plug 'elzr/vim-json'
@@ -60,7 +59,7 @@ let os=GetRunningOS()
 " gui settings
 if has('gui_running')
   if has('gui_macvim')
-    set guifont=Meslo\ LG\ S\ DZ\ for\ Powerline:h12
+    set guifont=Iosevka:h12
   elseif has('gui_gtk2')
     set guifont=DejaVu\ Sans\ Mono\ 9
   endif
@@ -73,7 +72,7 @@ endif
 " syntax highlighting and indentation options
 syntax on
 set background=dark
-colorscheme solarized
+colorscheme dracula
 
 set colorcolumn=80
 
