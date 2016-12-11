@@ -61,7 +61,7 @@ if has('gui_running')
   if has('gui_macvim')
     set guifont=Iosevka:h12
   elseif has('gui_gtk2')
-    set guifont=Iosevka\ 12
+    set guifont=Iosevka\ 13
   endif
   set guioptions-=r
   set guioptions-=R
@@ -72,7 +72,7 @@ endif
 " syntax highlighting and indentation options
 syntax on
 set background=dark
-colorscheme dracula
+colorscheme molokai
 
 set colorcolumn=80
 
