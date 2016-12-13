@@ -5,11 +5,11 @@ Xft.rgba:               rgb
 Xft.hinting:            true
 Xft.hintstyle:          hintfull
 
-URxvt.font:             xft:Fantasque Sans Mono:Regular:size=11
-URxvt.boldFont:         xft:Fantasque Sans Mono:Bold:size=11
-URxvt.italicFont:       xft:Fantasque Sans Mono:Italic:size=11
-URxvt.boldItalicFont:   xft:Fantasque Sans Mono:Bold:Italic:size=11
-URxvt.letterSpace:      -1
+URxvt.font:             xft:mononoki:Regular:size=11
+URxvt.boldFont:         xft:mononoki:Bold:size=11
+URxvt.italicFont:       xft:mononoki:Italic:size=11
+URxvt.boldItalicFont:   xft:mononoki:Bold:Italic:size=11
+URxvt.letterSpace:      -2
 URxvt.scrollBar:        false
 
 ! Dracula Xresources palette
