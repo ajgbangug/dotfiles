@@ -35,6 +35,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
 Plug 'trusktr/seti.vim'
 Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-vividchalk'
 Plug 'whatyouhide/vim-gotham'
 Plug 'reedes/vim-colors-pencil'
 
@@ -59,9 +60,9 @@ let os=GetRunningOS()
 " gui settings
 if has('gui_running')
   if has('gui_macvim')
-    set guifont=Luculent:h12
+    set guifont=Iosevka:h12
   elseif has('gui_gtk2')
-    set guifont=Luculent\ 12
+    set guifont=Iosevka\ 12
   endif
   set guioptions-=r
   set guioptions-=R
@@ -72,7 +73,7 @@ endif
 " syntax highlighting and indentation options
 syntax on
 set background=dark
-colorscheme molokai
+colorscheme vividchalk
 
 set colorcolumn=80
 
