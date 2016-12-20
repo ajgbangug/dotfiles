@@ -5,7 +5,6 @@ filetype off
 call plug#begin('~/.vim/plugged')
 
 Plug 'Raimondi/delimitMate'
-Plug 'SirVer/ultisnips'
 Plug 'altercation/vim-colors-solarized'
 Plug 'bling/vim-airline'
 Plug 'chase/vim-ansible-yaml'
@@ -55,9 +54,9 @@ let os=GetRunningOS()
 " gui settings
 if has('gui_running')
   if has('gui_macvim')
-    set guifont=mononoki:h12
+    set guifont=Hasklig:h12
   elseif has('gui_gtk2')
-    set guifont=mononoki\ 10
+    set guifont=Hasklig\ 10
   endif
   set guioptions-=r
   set guioptions-=R
@@ -68,7 +67,7 @@ endif
 " syntax highlighting and indentation options
 syntax on
 set background=dark
-colorscheme molokai
+colorscheme dracula
 
 set colorcolumn=80
 
@@ -83,10 +82,6 @@ let g:netrw_list_hide = '.*\.pyc$'
 
 " make ctrlp fuzzyfind in the current directory
 let g:ctrl_p_working_path_mode = 'ra'
-
-let g:UltiSnipsExpandTrigger = '<tab>'
-let g:UltiSnipsJumpForwardTrigger = '<c-b>'
-let g:UltiSnipsJumpBackwardTrigger = '<c-z>'
 
 let g:ctrlp_custom_ignore = 'target\|git\|.*\.pyc\|.*\.class'
 
