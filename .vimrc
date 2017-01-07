@@ -54,7 +54,7 @@ let os=GetRunningOS()
 " gui settings
 if has('gui_running')
   if has('gui_macvim')
-    set guifont=Cousine:h12
+    set guifont=Hack:h12
   elseif has('gui_gtk2')
     set guifont=Iosevka\ 10
   endif
@@ -87,7 +87,7 @@ endif
 
 set colorcolumn=80
 
-let g:airline_powerline_fonts = 0
+let g:airline_powerline_fonts = 1
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 let g:airline#extensions#tabline#enabled = 1
