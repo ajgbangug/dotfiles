@@ -81,3 +81,6 @@ if which jenv > /dev/null; then eval "$(jenv init -)"; fi
 
 # Load RVM into a shell session *as a function*
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+# Docker Machine
+if which docker-machine > /dev/null; then eval "$(docker-machine env default)"; fi
