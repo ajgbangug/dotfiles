@@ -84,3 +84,7 @@ export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # Docker Machine
 if which docker-machine > /dev/null; then eval "$(docker-machine env default)"; fi
+
+export LDFLAGS="-L/usr/local/opt/openssl/lib"
+export CPPFLAGS="-I/usr/local/opt/openssl/include"
+export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"

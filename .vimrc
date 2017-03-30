@@ -6,7 +6,6 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'Raimondi/delimitMate'
 Plug 'bling/vim-airline'
-Plug 'chase/vim-ansible-yaml'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'davidhalter/jedi-vim'
 Plug 'elzr/vim-json'
@@ -49,14 +48,13 @@ function! GetRunningOS()
     endif
   endif
 endfunction
+
 let os=GetRunningOS()
 
 " gui settings
 if has('gui_running')
-  if has('gui_macvim')
-    set guifont=Hack:h12
-  elseif has('gui_gtk2')
-    set guifont=Iosevka\ 10
+  if has('gui_gtk2')
+    set guifont=Hack\ 10
   endif
   set guioptions-=r
   set guioptions-=R
@@ -83,6 +81,11 @@ if (empty($TMUX))
   if (has("termguicolors"))
     set termguicolors
   endif
+endif
+
+if (has("nvim"))
+  let g:python_host_prog = '/Users/ajgb/.pyenv/versions/neovim/bin/python'
+  let g:python3_host_prog = '/Users/ajgb/.pyenv/versions/neovim3/bin/python'
 endif
 
 set colorcolumn=80
