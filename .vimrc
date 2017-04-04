@@ -54,7 +54,7 @@ let os=GetRunningOS()
 " gui settings
 if has('gui_running')
   if has('gui_gtk2')
-    set guifont=Iosevka\ 12
+    set guifont=Code\ New\ Roman\ 12
   endif
   set guioptions-=r
   set guioptions-=R
@@ -90,7 +90,7 @@ endif
 
 set colorcolumn=80
 
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 0
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 let g:airline#extensions#tabline#enabled = 1
