@@ -27,6 +27,7 @@ if [[ $platform == "mac" ]]; then
 
   # for homebrew
   export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+  export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
   # for Java
   export JAVA_HOME=$(/usr/libexec/java_home)
@@ -50,7 +51,6 @@ elif [[ $platform == "linux" ]]; then
   }
 
   # Source SSH settings, if applicable
-
   if [ -f "${SSH_ENV}" ]; then
       . "${SSH_ENV}" > /dev/null
       #ps ${SSH_AGENT_PID} doesn't work under cywgin
@@ -60,31 +60,13 @@ elif [[ $platform == "linux" ]]; then
   else
       start_agent;
   fi
-
-  # For pyenv
-  export PYENV_PATH="$HOME/.pyenv/bin"
-  if [ -d $PYENV_PATH ]; then
-    export PATH="$HOME/.pyenv/bin:$PATH"
-  fi
 fi
 
-# for pyenv
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+# pipsi
+export PATH="/Users/ajgb/.local/bin:$PATH"
 
-# for pyenv-virtualenv
-if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
+# rbenv
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # for jenv
 if which jenv > /dev/null; then eval "$(jenv init -)"; fi
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
-# Load RVM into a shell session *as a function*
-export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
-# Docker Machine
-if which docker-machine > /dev/null; then eval "$(docker-machine env default)"; fi
-
-export LDFLAGS="-L/usr/local/opt/openssl/lib"
-export CPPFLAGS="-I/usr/local/opt/openssl/include"
-export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"

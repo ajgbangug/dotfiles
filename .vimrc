@@ -3,25 +3,18 @@ set nocompatible
 filetype off
 
 call plug#begin('~/.vim/plugged')
-
 Plug 'Raimondi/delimitMate'
 Plug 'bling/vim-airline'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'davidhalter/jedi-vim'
 Plug 'elzr/vim-json'
-Plug 'ervandew/supertab'
-Plug 'fatih/vim-go'
 Plug 'honza/vim-snippets'
-Plug 'jelera/vim-javascript-syntax'
 Plug 'joshdick/onedark.vim'
-Plug 'majutsushi/tagbar'
-Plug 'marijnh/tern_for_vim'
 Plug 'mhinz/vim-signify'
+Plug 'morhetz/gruvbox'
+Plug 'neomake/neomake'
 Plug 'pangloss/vim-javascript'
 Plug 'rking/ag.vim'
-Plug 'scrooloose/syntastic'
 Plug 'sheerun/vim-polyglot'
-Plug 'tomasr/molokai'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-fugitive'
@@ -51,11 +44,7 @@ endfunction
 
 let os=GetRunningOS()
 
-" gui settings
 if has('gui_running')
-  if has('gui_gtk2')
-    set guifont=Code\ New\ Roman\ 12
-  endif
   set guioptions-=r
   set guioptions-=R
   set guioptions-=l
@@ -65,8 +54,7 @@ endif
 " syntax highlighting and indentation options
 syntax on
 set background=dark
-colorscheme onedark
-
+colorscheme gruvbox
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
 "If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support
 "(see < http://sunaku.github.io/tmux-24bit-color.html#usage > for more information.)
@@ -84,13 +72,17 @@ if (empty($TMUX))
 endif
 
 if (has("nvim"))
-  let g:python_host_prog = '/Users/ajgb/.pyenv/versions/neovim/bin/python'
-  let g:python3_host_prog = '/Users/ajgb/.pyenv/versions/neovim3/bin/python'
+  let g:python_host_prog = $HOME."/.virtualenvs/neovim-py2/bin/python"
+  let g:python3_host_prog = $HOME."/.virtualenvs/neovim-py3/bin/python"
+  let g:ruby_host_prog = $HOME."/.rbenv/shims/ruby"
 endif
 
 set colorcolumn=80
 
-let g:airline_powerline_fonts = 0
+" Run Neomake whenever a file is saved
+autocmd! BufWritePost * Neomake
+
+let g:airline_powerline_fonts = 1
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 let g:airline#extensions#tabline#enabled = 1
@@ -104,7 +96,8 @@ let g:ctrl_p_working_path_mode = 'ra'
 
 let g:ctrlp_custom_ignore = 'target\|git\|.*\.pyc\|.*\.class'
 
-let g:syntastic_python_checkers = ['python', 'flake8']
+" neomake settings
+let g:neomake_python_enabled_makers = ['python', 'flake8']
 
 " turn off blinking cursor
 set gcr=a:blinkon0
