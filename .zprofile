@@ -31,7 +31,7 @@ if [[ $platform == "mac" ]]; then
 
   # for Java
   export JAVA_HOME=$(/usr/libexec/java_home)
-  export ANDROID_HOME=~/Library/Android/sdk
+  export ANDROID_HOME=/Users/ajgb/Library/Android/sdk
 
   # for mactex
   eval `/usr/libexec/path_helper -s`
@@ -62,11 +62,22 @@ elif [[ $platform == "linux" ]]; then
   fi
 fi
 
-# pipsi
-export PATH="/Users/ajgb/.local/bin:$PATH"
+alias dcomp=docker-compose
+alias dcompup="docker-compose up -d"
+alias dcompdown="docker-compose down"
+alias dvprune="docker volume prune -f"
+alias dcprune="docker container prune -f"
+alias diprune="docker image prune -f"
+alias dvciprune="dvprune && dcprune && diprune"
+alias dlogs="docker logs -f"
 
 # rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # for jenv
 if which jenv > /dev/null; then eval "$(jenv init -)"; fi
+
+# for pyenv
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
