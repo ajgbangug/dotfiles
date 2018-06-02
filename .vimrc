@@ -9,7 +9,6 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'elzr/vim-json'
 Plug 'honza/vim-snippets'
 Plug 'itchyny/lightline.vim'
-Plug 'jacoborus/tender.vim'
 Plug 'mhinz/vim-signify'
 Plug 'neomake/neomake'
 Plug 'pangloss/vim-javascript'
@@ -69,8 +68,8 @@ endif
 
 " syntax highlighting and indentation options
 syntax on
-set background=dark
-colorscheme tender
+set background=light
+colorscheme PaperColor
 
 if (has("nvim"))
   let g:python_host_prog = $HOME."/.virtualenvs/neovim-py2/bin/python"
