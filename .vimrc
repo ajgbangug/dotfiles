@@ -72,9 +72,9 @@ set background=light
 colorscheme PaperColor
 
 if (has("nvim"))
-  let g:python_host_prog = $HOME."/.virtualenvs/neovim-py2/bin/python"
-  let g:python3_host_prog = $HOME."/.virtualenvs/neovim-py3/bin/python"
-  let g:ruby_host_prog = $HOME."/.rbenv/shims/ruby"
+  let g:python_host_prog = $PYENV_ROOT."/versions/neovim2/bin/python"
+  let g:python3_host_prog = $PYENV_ROOT."/versions/neovim3/bin/python"
+  " let g:ruby_host_prog = $HOME."/.rbenv/shims/ruby"
 endif
 
 set colorcolumn=80
