@@ -79,9 +79,8 @@ if which jenv > /dev/null; then eval "$(jenv init -)"; fi
 
 # for pyenv
 export PYENV_ROOT=$HOME/.pyenv
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+if which pyenv > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 
 # for node
 export NVM_DIR="$HOME/.nvm"
