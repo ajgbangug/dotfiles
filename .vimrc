@@ -68,7 +68,7 @@ endif
 
 " syntax highlighting and indentation options
 syntax on
-set background=dark
+set background=light
 colorscheme PaperColor
 
 if (has("nvim"))
