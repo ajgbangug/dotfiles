@@ -95,6 +95,9 @@ export NVM_DIR="$HOME/.nvm"
 export GOPATH=$HOME/Development/go
 if which go > /dev/null; then export PATH=$PATH:$(go env GOPATH)/bin; fi
 
+# extra kubeconfigs
+export KUBECONFIG=$HOME/.kube/config:$HOME/.kube/conf.d/unawa2
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/ajgb/.sdkman"
 [[ -s "/Users/ajgb/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/ajgb/.sdkman/bin/sdkman-init.sh"
