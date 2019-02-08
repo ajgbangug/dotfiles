@@ -96,7 +96,7 @@ export GOPATH=$HOME/Development/go
 if which go > /dev/null; then export PATH=$PATH:$(go env GOPATH)/bin; fi
 
 # extra kubeconfigs
-export KUBECONFIG=$HOME/.kube/config:$HOME/.kube/conf.d/unawa2
+export KUBECONFIG=$HOME/.kube/config$(for i in $(ls -d1 $HOME/.kube/conf.d/*); do echo ":$i"; done;)
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/ajgb/.sdkman"
