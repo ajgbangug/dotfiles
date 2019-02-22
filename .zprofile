@@ -31,7 +31,7 @@ if [[ $platform == "mac" ]]; then
 
   # for Java
   export JAVA_HOME=$(/usr/libexec/java_home)
-  export ANDROID_HOME=/Users/ajgb/Library/Android/sdk
+  export ANDROID_HOME=$HOME/Library/Android/sdk
 
   # for mactex
   eval `/usr/libexec/path_helper -s`
@@ -96,8 +96,10 @@ export GOPATH=$HOME/Development/go
 if which go > /dev/null; then export PATH=$PATH:$(go env GOPATH)/bin; fi
 
 # extra kubeconfigs
-export KUBECONFIG=$HOME/.kube/config$(for i in $(ls -d1 $HOME/.kube/conf.d/*); do echo ":$i"; done;)
+if [ -d "$HOME/.kube/conf.d" ]; then
+  export KUBECONFIG=$HOME/.kube/config$(for i in $(ls -d1 $HOME/.kube/conf.d/*); do echo ":$i"; done;)
+fi
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/ajgb/.sdkman"
-[[ -s "/Users/ajgb/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/ajgb/.sdkman/bin/sdkman-init.sh"
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
