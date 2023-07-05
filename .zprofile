@@ -92,8 +92,8 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # for go
-export GOPATH=$HOME/Development/go
-if which go > /dev/null; then export PATH=$PATH:$(go env GOPATH)/bin; fi
+export GOPATH=$HOME/Projects/go
+# if which go > /dev/null; then export PATH=$PATH:$(go env GOPATH)/bin; fi
 
 # extra kubeconfigs
 if [ -d "$HOME/.kube/conf.d" ]; then
